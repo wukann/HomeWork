@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
@@ -30,11 +31,13 @@ fun RecipeListScreen(
             TopAppBar(
                 modifier = Modifier,
             ) {
-                Row() {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
                     Text(text = stringResource(id = R.string.cooking_records_title))
                     Spacer(modifier = Modifier.width(8.dp))
-//                    Icon(painter = painterResource(id = R.drawable.rich_gohan_foreground))
-                    // Image, Icon で svg or png 画像を描写しようとしたがどちらもビルドエラー…
+                    Image(painter = painterResource(id = R.drawable.rich_gohan_foreground), contentDescription = "ごはんのアイコン")
                 }
             }
 
